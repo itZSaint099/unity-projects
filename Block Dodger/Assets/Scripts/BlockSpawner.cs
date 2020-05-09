@@ -6,8 +6,6 @@ public class BlockSpawner : MonoBehaviour
     public GameObject blockPrefab;
 
     private Score score;
-    private float startTime = 0f;
-    private float elaspedTime = 0f;
 
     int c = 0;
 
