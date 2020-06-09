@@ -8,11 +8,13 @@ public class GameManager : MonoBehaviour
     public void EndGame()
     {
         StartCoroutine(RestartLevel());
+        Debug.Log(Time.timeScale + "," + Time.fixedDeltaTime);
+        Debug.Log("After restart" + Time.fixedDeltaTime);
     }
 
     public void RestartGame()
     {
-        
+        Time.fixedDeltaTime = Time.fixedUnscaledDeltaTime;
         SceneManager.LoadScene("MainScene");
     }
 
@@ -32,6 +34,6 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1f;
         Time.fixedDeltaTime = Time.fixedDeltaTime * slowMoFactor;
 
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
     }
 }

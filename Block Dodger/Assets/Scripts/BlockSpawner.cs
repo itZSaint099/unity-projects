@@ -15,6 +15,7 @@ public class BlockSpawner : MonoBehaviour
     void Start()
     {
         score = FindObjectOfType<Score>();
+        //Invoke("SpawnBlocks", 2f);
     }
 
     // Start is called before the first frame update

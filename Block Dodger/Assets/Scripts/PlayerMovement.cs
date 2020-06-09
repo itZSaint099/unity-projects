@@ -15,7 +15,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        float x = Input.GetAxis("Horizontal") * Time.fixedDeltaTime * speed;
+        float x = Input.GetAxis("Mouse X") * Time.fixedDeltaTime * speed;
         Vector2 newPosition = rb.position + (Vector2.right * x);
         newPosition.x = Mathf.Clamp(newPosition.x, -mapWidth, mapWidth);
         rb.MovePosition(newPosition);
