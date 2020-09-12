@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -6,6 +7,8 @@ public class GameManager : MonoBehaviour
 
     public Rotator rotator;
     public Spawner spawner;
+    public Animator animator;
+    public Animator rotatorAnimator;
 
     public void EndGame()
     {
@@ -15,7 +18,15 @@ public class GameManager : MonoBehaviour
         }
         gameEnded = true;
 
+        animator.SetTrigger("EndGame");
+        rotatorAnimator.SetTrigger("EndGame");
+
         spawner.enabled = false;
         rotator.enabled = false;
+    }
+
+    public void RestartGame()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
