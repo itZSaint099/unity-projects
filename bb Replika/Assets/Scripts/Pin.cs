@@ -3,6 +3,7 @@
 public class Pin : MonoBehaviour
 {
     private bool isPinned = false;
+    private bool state = false;
 
     public float pinSpeed = 20f;
     public Rigidbody2D rb;
@@ -23,6 +24,8 @@ public class Pin : MonoBehaviour
             transform.SetParent(collision.transform);
             // collision.GetComponent<Rotator>().rotatorSpeed *= -1;
             isPinned = true;
+            state = true;
+            Score.PinCount++;
         }
         else if (collision.tag == "Pin")
         {

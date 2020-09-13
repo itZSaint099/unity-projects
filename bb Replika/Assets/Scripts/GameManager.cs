@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     public Spawner spawner;
     public Animator animator;
     public Animator rotatorAnimator;
+    public Score score;
 
     public void EndGame()
     {
@@ -23,6 +24,7 @@ public class GameManager : MonoBehaviour
 
         spawner.enabled = false;
         rotator.enabled = false;
+        score.enabled = false;
     }
 
     public void RestartGame()
