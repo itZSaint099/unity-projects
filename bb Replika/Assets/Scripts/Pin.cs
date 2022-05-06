@@ -3,9 +3,9 @@
 public class Pin : MonoBehaviour
 {
     private bool isPinned = false;
-    private bool state = false;
+    public bool state = false;
 
-    public float pinSpeed = 20f;
+    public float pinSpeed = 50f;
     public Rigidbody2D rb;
 
     // Update is called once per frame
